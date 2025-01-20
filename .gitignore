@@ -10,6 +10,9 @@
 !.yarn/releases
 !.yarn/versions
 
+# firebase
+firebase.js
+
 # testing
 /coverage
 
