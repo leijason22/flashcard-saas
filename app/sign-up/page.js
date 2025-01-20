@@ -1,9 +1,9 @@
 import React from "react";
 import { Container, Box, Typography, AppBar, Toolbar, Button } from "@mui/material";
-import { SignIn } from "@clerk/nextjs";
+import { SignUp } from "@clerk/nextjs";
 import Link from "next/link";
 
-export default function SignInPage() {
+export default function SignUpPage() {
   return (
     <>
       {/* AppBar */}
@@ -13,14 +13,14 @@ export default function SignInPage() {
             Flashcard SaaS
           </Typography>
           <Button color="inherit">
-            <Link href="/sign-in" passHref>
-              Login
+            <Link href="/sign-up" passHref>
+              Sign Up
             </Link>
           </Button>
         </Toolbar>
       </AppBar>
 
-      {/* Sign-In Content */}
+      {/* Sign-Up Content */}
       <Container maxWidth="sm">
         <Box
           display="flex"
@@ -30,12 +30,12 @@ export default function SignInPage() {
           sx={{ textAlign: "center", my: 4 }}
         >
           <Typography variant="h4" component="h1" gutterBottom>
-            Sign In
+            Sign Up
           </Typography>
-          <SignIn
-            path="/sign-in"
+          <SignUp
+            path="/sign-up"
             routing="path"
-            signUpUrl="/sign-up" // Link to the sign-up page
+            signInUrl="/sign-in" // Link to the sign-in page
             afterSignInUrl="/generate" // Redirect to /generate after sign-in
             afterSignUpUrl="/generate" // Redirect to /generate after sign-up
           />

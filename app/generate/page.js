@@ -47,7 +47,11 @@ export default function Generate() {
     }
 
     try {
-      console.log("Saving flashcards:", { setName, userId: user.id, flashcards });
+      console.log("Saving flashcards:", {
+        setName,
+        userId: user.id,
+        flashcards,
+      });
 
       const userDocRef = doc(db, `users/${user.id}`);
       const userDocSnap = await getDoc(userDocRef);
