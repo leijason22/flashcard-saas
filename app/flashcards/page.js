@@ -1,4 +1,4 @@
-'use client';
+"use client";
 
 import { useEffect, useState } from "react";
 import {
@@ -19,8 +19,8 @@ export default function Flashcards() {
   const { isLoaded, isSignedIn, user } = useUser();
   const [flashcards, setFlashcards] = useState([]);
   const [flipped, setFlipped] = useState({});
-  const searchParams = useSearchParams();
-  const search = searchParams?.get("id"); // Ensure searchParams is not null
+  const searchParams = typeof window !== "undefined" ? useSearchParams() : null; // Ensure useSearchParams is only used on the client
+  const search = searchParams?.get("id");
 
   useEffect(() => {
     async function getFlashcards() {
